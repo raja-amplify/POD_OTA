@@ -158,7 +158,12 @@ OcppOperation *makeOcppOperation(WebSocketsClient *ws, const char *messageType) 
   } else if (!strcmp(messageType, "TriggerMessage")) {
     msg = new TriggerMessage(ws);
     operation->setOnReceiveReqListener(onTriggerMessageRequest);
-  } else if (!strcmp(messageType, "RemoteStartTransaction")) {
+  } 
+  else if (!strcmp(messageType, "FOTA")) { // edit later
+    msg = new FOTA(ws); // create this constructor
+   // operation->setOnReceiveReqListener(onTriggerMessageRequest); // not required.
+  }
+  else if (!strcmp(messageType, "RemoteStartTransaction")) {
     msg = new RemoteStartTransaction();
     operation->setOnReceiveReqListener(onRemoteStartTransactionReceiveRequest);
     if (onRemoteStartTransactionSendConf == NULL) 
