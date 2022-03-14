@@ -27,6 +27,9 @@
 #include "EVSE.h"
 #include "OcppEngine.h"
 
+#include "SimpleOcppOperationFactory.h"
+
+
 #include <string.h>
 #include "TimeHelper.h"
 
@@ -34,7 +37,7 @@
  * @breif: Instantiate an object FirmwareStatus
  */ 
 
-FirmwareStatus::FirmwareStatus(WebSocketsClient *webSocket) {
+FirmwareStatus::FirmwareStatus(WebSocketsClient *webSocket) : webSocket(webSocket){
 statusMessage = "NotImplemented"; //default value if anything goes wrong
 }
 

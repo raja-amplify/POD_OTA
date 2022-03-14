@@ -27,12 +27,19 @@
 
 #include "OcppMessage.h"
 
+#include "Variants.h"
+
+#include "libraries/arduinoWebSockets-master/src/WebSocketsClient.h"
+
+#include "OcppMessage.h"
+#include "OcppOperation.h"
+
 typedef enum firmwarestatus { Downloaded, DownloadFailed , Downloading, Idle , InstallationFailed , Installing, Installed};
 
 class FirmwareStatus : public OcppMessage {
 private:
   WebSocketsClient *webSocket;
-  OcppOperation *FirmwareStatus;
+  OcppOperation *firmwareStatusOperation;
   const char *statusMessage;
 
 public:
