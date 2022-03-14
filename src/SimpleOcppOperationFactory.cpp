@@ -20,7 +20,7 @@
 #include "RemoteStartTransaction.h"
 #include "RemoteStopTransaction.h"
 #include "Reset.h"
-#include "FirmwareStatus_OCPP.h"
+//#include "FirmwareStatus_OCPP.h" // Do it later
 #include "FOTA_OCPP.h"
 // #include "SendLocalList.h"
 
@@ -178,10 +178,10 @@ OcppOperation *makeOcppOperation(WebSocketsClient *ws, const char *messageType) 
     operation->setOnReceiveReqListener(onTriggerMessageRequest);
   }
   //Added by Raja 
-  else if (!strcmp(messageType, "FirmwareStatus")) { 
+ /* else if (!strcmp(messageType, "FirmwareStatus")) { 
     msg = new FirmwareStatus(ws);
    // operation->setOnReceiveReqListener(FirmwareStatus); // not required.
-  }
+  }*/
   //Added by Raja 
   else if (!strcmp(messageType, "FotaNotification")) { 
     msg = new FotaNotification();

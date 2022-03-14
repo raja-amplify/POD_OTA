@@ -34,7 +34,7 @@
  * @breif: Instantiate an object FirmwareStatus
  */ 
 
-FirmwareStatus::FirmwareStatus(WebSocketsClient *webSocket) : webSocket(webSocket) {
+FirmwareStatus::FirmwareStatus(WebSocketsClient *webSocket) {
 statusMessage = "NotImplemented"; //default value if anything goes wrong
 }
 

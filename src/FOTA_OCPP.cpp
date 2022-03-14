@@ -24,9 +24,6 @@
 #include "Variants.h"
 
 #include "FOTA_OCPP.h"
-#include "EVSE.h"
-#include "OcppEngine.h"
-
 
 /*
  * @breif: Instantiate an object FotaNotification
@@ -119,11 +116,11 @@ DynamicJsonDocument*  FotaNotification::createReq(JsonObject payload){
 }
 
 DynamicJsonDocument* FotaNotification::createConf(){
-	DynamicJsonDocument* doc = new DynamicJsonDocument(JSON_OBJECT_SIZE(3) + (JSONDATE_LENGTH + 1));
+	DynamicJsonDocument* doc = new DynamicJsonDocument(JSON_OBJECT_SIZE(3) + 1);
 	JsonObject payload = doc->to<JsonObject>();
-	char currentTime[JSONDATE_LENGTH + 1] = {'\0'};
+	/*char currentTime[JSONDATE_LENGTH + 1] = {'\0'};
 	getJsonDateStringFromSystemTime(currentTime, JSONDATE_LENGTH);
-	payload["currentTime"] =  currentTime; //currentTime
+	payload["currentTime"] =  currentTime; //currentTime*/
 	payload["interval"] = 86400; //heartbeat send interval - not relevant for JSON variant of OCPP so send dummy value that likely won't break
 	payload["status"] = "Accepted";
 	return doc;
