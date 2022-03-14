@@ -60,7 +60,7 @@ DynamicJsonDocument* FirmwareStatus::createReq() {
 	//DynamicJsonDocument *doc = new DynamicJsonDocument(JSON_OBJECT_SIZE(3) + strlen(EVSE_getChargePointVendor()) + 1 + cpSerial.length() + 1 + strlen(EVSE_getChargePointModel()) + 1);
 	DynamicJsonDocument *doc = new DynamicJsonDocument(JSON_OBJECT_SIZE(1));
 	JsonObject payload = doc->to<JsonObject>();
-	payload["status"] = Downloaded; // fill this enum
+	payload["status"] = firmwarestatus_str[Downloaded]; // fill this enum
 	//Need nested json for customData here -
 	
 	return doc;

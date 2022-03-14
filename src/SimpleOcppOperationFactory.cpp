@@ -86,7 +86,10 @@ void setOnResetSendConfListener(OnSendConfListener listener){
 }
 
 
-//FOTA
+/*
+* @breif: Function pointer for FOTA and firmware status
+*/
+
 OnReceiveReqListener onFotaNotificationReceiveRequest;
 void setOnFotaNotificationReceiveRequestListener(OnReceiveReqListener listener) {
   onFotaNotificationReceiveRequest = listener;
@@ -98,9 +101,9 @@ void setOnFotaNotificationSendConfListener(OnSendConfListener listener){
 }
 
 //Firmware Status
-OnReceiveReqListener onFirmwareStatusRequest;
+OnReceiveReqListener onFirmwareStatusReceiveRequest;
 void setOnFirmwareStatusRequestListener(OnReceiveReqListener listener){
-  onFirmwareStatusRequest = listener;
+  onFirmwareStatusReceiveRequest = listener;
 }
 
 

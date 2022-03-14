@@ -36,6 +36,9 @@
 
 typedef enum firmwarestatus { Downloaded, DownloadFailed , Downloading, Idle , InstallationFailed , Installing, Installed};
 
+static const char *firmwarestatus_str[] = { "Downloaded", "DownloadFailed" , "Downloading", "Idle" , "InstallationFailed" , "Installing", "Installed" };
+
+
 class FirmwareStatus : public OcppMessage {
 private:
   WebSocketsClient *webSocket;
