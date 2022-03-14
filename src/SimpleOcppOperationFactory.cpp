@@ -20,6 +20,8 @@
 #include "RemoteStartTransaction.h"
 #include "RemoteStopTransaction.h"
 #include "Reset.h"
+#include "FirmwareStatus_OCPP.h"
+#include "FOTA_OCPP.h"
 // #include "SendLocalList.h"
 
 #include "OcppEngine.h"

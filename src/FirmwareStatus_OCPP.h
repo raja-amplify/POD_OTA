@@ -36,7 +36,7 @@ private:
   const char *statusMessage;
 
 public:
-	FirmwareStatus();
+	FirmwareStatus(WebSocketsClient *webSocket);
 
 	const char* getOcppOperationType();
 

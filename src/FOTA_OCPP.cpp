@@ -27,8 +27,6 @@
 #include "EVSE.h"
 #include "OcppEngine.h"
 
-#include <string.h>
-#include "TimeHelper.h"
 
 /*
  * @breif: Instantiate an object FotaNotification
@@ -93,7 +91,7 @@ Modified bootnotification :
 [2,"531531531","BootNotification",{"chargePointVendor":"Agrawal","chargePointSerialNumber":"dummyLocal2","chargePointModel":"Pulkit"},"User-Agent":"ESP32-OCPP-Update","x-ESP32-STA-MAC":"18:FE:AA:AA:AA:AA","x-ESP32-AP-MAC":"1A:FE:AA:AA:AA:AA","x-ESP32-free-space":"671744","x-ESP32-sketch-size":"373940","x-ESP32-sketch-md5":"a56f8ef78a0bebd812f62067daf1408a","x-ESP32-chip-size":"4194304","x-ESP32-sdk-version":"1.3.0","x-ESP32-version":"POD_V2_4","x-ESP32-mode","sketch"]
  */ 
 
-DynamicJsonDocument* FotaNotification::processReq() {
+DynamicJsonDocument* FotaNotification::processReq(JsonObject payload) {
 	String cpSerial = String('\0');
 	EVSE_getChargePointSerialNumber(cpSerial);
 

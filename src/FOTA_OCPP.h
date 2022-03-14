@@ -27,17 +27,18 @@
 
 #include "OcppMessage.h"
 
+
 class FotaNotification : public OcppMessage {
 public:
 	FotaNotification();
 
 	const char* getOcppOperationType();
 
-	DynamicJsonDocument* createReq();
-
+	//DynamicJsonDocument* createReq();
+	void createReq();
 	void processConf(JsonObject payload);
 
-	void processReq(JsonObject payload);
+	DynamicJsonDocument* processReq(JsonObject payload);
 
 	DynamicJsonDocument* createConf();
 };
