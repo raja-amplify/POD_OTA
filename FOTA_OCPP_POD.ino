@@ -1,12 +1,14 @@
 /************************************/
 /*
 <POD without Control Pilot Support>
-The following code is developed by Pulkit Agrawal & Wamique.
+The following code was initialized by Pulkit Agrawal & Wamique.
+Modified by G. Raja Sumant
 *Added Master-Slave files
 *Added EnergyMeter Fix
 *Added 2G+Wifi
 *Added OTA
 *Fixed RFID
+*Raja added 4G , FOTA OCPP class , firmware status OCPP class and URL parser
 */
 
 //ESP32 Libraries

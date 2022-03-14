@@ -28,6 +28,8 @@
 
 #include <string.h>
 
+
+//Function pointers
 OnReceiveReqListener onAuthorizeRequest;
 void setOnAuthorizeRequestListener(OnReceiveReqListener listener){
   onAuthorizeRequest = listener;
@@ -83,19 +85,23 @@ void setOnResetSendConfListener(OnSendConfListener listener){
   onResetSendConf = listener;
 }
 
-/*
+
 //FOTA
-OnSendConfListener onResetSendConf;
-void setOnResetSendConfListener(OnSendConfListener listener){
-  onResetSendConf = listener;
+OnReceiveReqListener onFotaNotificationReceiveRequest;
+void setOnFotaNotificationReceiveRequestListener(OnReceiveReqListener listener) {
+  onFotaNotificationReceiveRequest = listener;
 }
 
-//Status
-OnSendConfListener onResetSendConf;
-void setOnResetSendConfListener(OnSendConfListener listener){
-  onResetSendConf = listener;
+OnSendConfListener onFotaNotificationSendConf;
+void setOnFotaNotificationSendConfListener(OnSendConfListener listener){
+  onFotaNotificationSendConf = listener;
 }
-*/
+
+//Firmware Status
+OnReceiveReqListener onFirmwareStatusRequest;
+void setOnFirmwareStatusRequestListener(OnReceiveReqListener listener){
+  onFirmwareStatusRequest = listener;
+}
 
 
 /*
