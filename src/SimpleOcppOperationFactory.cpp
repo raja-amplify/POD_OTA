@@ -161,7 +161,7 @@ OcppOperation *makeOcppOperation(WebSocketsClient *ws, const char *messageType) 
   }
   //Added by Raja 
   else if (!strcmp(messageType, "FirmwareStatus")) { 
-    msg = new FirmwareStatus();
+    msg = new FirmwareStatus(ws);
    // operation->setOnReceiveReqListener(FirmwareStatus); // not required.
   }
   //Added by Raja 

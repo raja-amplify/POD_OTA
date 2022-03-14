@@ -27,7 +27,14 @@
 
 #include "OcppMessage.h"
 
+typedef enum firmwarestatus { Downloaded, DownloadFailed , Downloading, Idle , InstallationFailed , Installing, Installed};
+
 class FirmwareStatus : public OcppMessage {
+private:
+  WebSocketsClient *webSocket;
+  OcppOperation *triggeredOperation;
+  const char *statusMessage;
+
 public:
 	FirmwareStatus();
 

@@ -18,7 +18,7 @@ const char* TriggerMessage::getOcppOperationType(){
 
 void TriggerMessage::processReq(JsonObject payload) {
 
-  Serial.print(F("[TriggerMessage] Warning: TriggerMessage is not tested!\n"));
+  Serial.println(F("[TriggerMessage] Warning: TriggerMessage is not tested!\n"));
 
   triggeredOperation = makeFromTriggerMessage(webSocket, payload);
   if (triggeredOperation != NULL) {

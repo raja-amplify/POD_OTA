@@ -34,8 +34,8 @@
  * @breif: Instantiate an object FirmwareStatus
  */ 
 
-FirmwareStatus::FirmwareStatus() {
-
+FirmwareStatus::FirmwareStatus(WebSocketsClient *webSocket) : webSocket(webSocket) {
+statusMessage = "NotImplemented"; //default value if anything goes wrong
 }
 
 /*
@@ -57,7 +57,7 @@ DynamicJsonDocument* FirmwareStatus::createReq() {
 	//DynamicJsonDocument *doc = new DynamicJsonDocument(JSON_OBJECT_SIZE(3) + strlen(EVSE_getChargePointVendor()) + 1 + cpSerial.length() + 1 + strlen(EVSE_getChargePointModel()) + 1);
 	DynamicJsonDocument *doc = new DynamicJsonDocument(JSON_OBJECT_SIZE(1));
 	JsonObject payload = doc->to<JsonObject>();
-	payload["status"] = "enum"; // fill this enum
+	payload["status"] = Downloaded; // fill this enum
 	//Need nested json for customData here -
 	
 	return doc;
