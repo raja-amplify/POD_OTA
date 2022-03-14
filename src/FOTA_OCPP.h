@@ -34,11 +34,11 @@ public:
 
 	const char* getOcppOperationType();
 
-	//DynamicJsonDocument* createReq();
-	void createReq();
+	DynamicJsonDocument* createReq();
+
 	void processConf(JsonObject payload);
 
-	DynamicJsonDocument* processReq(JsonObject payload);
+	void processReq(JsonObject payload);
 
 	DynamicJsonDocument* createConf();
 };

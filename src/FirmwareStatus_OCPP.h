@@ -32,7 +32,7 @@ typedef enum firmwarestatus { Downloaded, DownloadFailed , Downloading, Idle , I
 class FirmwareStatus : public OcppMessage {
 private:
   WebSocketsClient *webSocket;
-  OcppOperation *triggeredOperation;
+  OcppOperation *FirmwareStatus;
   const char *statusMessage;
 
 public:

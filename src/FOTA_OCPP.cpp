@@ -91,23 +91,19 @@ Modified bootnotification :
 [2,"531531531","BootNotification",{"chargePointVendor":"Agrawal","chargePointSerialNumber":"dummyLocal2","chargePointModel":"Pulkit"},"User-Agent":"ESP32-OCPP-Update","x-ESP32-STA-MAC":"18:FE:AA:AA:AA:AA","x-ESP32-AP-MAC":"1A:FE:AA:AA:AA:AA","x-ESP32-free-space":"671744","x-ESP32-sketch-size":"373940","x-ESP32-sketch-md5":"a56f8ef78a0bebd812f62067daf1408a","x-ESP32-chip-size":"4194304","x-ESP32-sdk-version":"1.3.0","x-ESP32-version":"POD_V2_4","x-ESP32-mode","sketch"]
  */ 
 
-DynamicJsonDocument* FotaNotification::processReq(JsonObject payload) {
-	String cpSerial = String('\0');
-	EVSE_getChargePointSerialNumber(cpSerial);
-
+void FotaNotification::processReq(JsonObject payload) {
 
 	// For now the object size is 2, but with custom data, it will increase
 	//DynamicJsonDocument *doc = new DynamicJsonDocument(JSON_OBJECT_SIZE(3) + strlen(EVSE_getChargePointVendor()) + 1 + cpSerial.length() + 1 + strlen(EVSE_getChargePointModel()) + 1);
-	int url_length = 0;
+	/*int url_length = 0;
 	DynamicJsonDocument *doc = new DynamicJsonDocument(JSON_OBJECT_SIZE(2) + (JSONDATE_LENGTH + 1) + url_length);
 	JsonObject payload = doc->to<JsonObject>();
 	payload["location"] = "https://url";
 	char currentTime[JSONDATE_LENGTH + 1] = {'\0'};
 	getJsonDateStringFromSystemTime(currentTime, JSONDATE_LENGTH);
-	payload["retrieveDate"] = currentTime;
+	payload["retrieveDate"] = currentTime;*/
 	//Need nested json for customData here -
 	
-	return doc;
 }
 
 void FotaNotification::processConf(JsonObject payload){
@@ -116,7 +112,7 @@ void FotaNotification::processConf(JsonObject payload){
 	 */ 
 }
 
-void FotaNotification::createReq(JsonObject payload){
+DynamicJsonDocument*  FotaNotification::createReq(JsonObject payload){
 	/*
 	* Ignore Contents of this Req-message, because this is for debug purposes only
 	*/

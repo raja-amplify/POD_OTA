@@ -82,6 +82,22 @@ OnSendConfListener onResetSendConf;
 void setOnResetSendConfListener(OnSendConfListener listener){
   onResetSendConf = listener;
 }
+
+/*
+//FOTA
+OnSendConfListener onResetSendConf;
+void setOnResetSendConfListener(OnSendConfListener listener){
+  onResetSendConf = listener;
+}
+
+//Status
+OnSendConfListener onResetSendConf;
+void setOnResetSendConfListener(OnSendConfListener listener){
+  onResetSendConf = listener;
+}
+*/
+
+
 /*
 OnReceiveReqListener onGetLocalListVersionReceiveRequest;
 void setOnGetLocalListVersionReceiveRequestListener(OnReceiveReqListener listener) {
