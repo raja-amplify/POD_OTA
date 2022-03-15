@@ -34,6 +34,10 @@
 #include "OcppMessage.h"
 #include "OcppOperation.h"
 
+/*
+* @brief: Feature added by Raja
+* This feature will avoid hardcoding of messages. 
+*/
 typedef enum firmwarestatus { Downloaded, DownloadFailed , Downloading, Idle , InstallationFailed , Installing, Installed};
 
 static const char *firmwarestatus_str[] = { "Downloaded", "DownloadFailed" , "Downloading", "Idle" , "InstallationFailed" , "Installing", "Installed" };

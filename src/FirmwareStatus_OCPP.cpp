@@ -1,6 +1,7 @@
 /*
  * FOTA_OCPP.cpp
  * 
+ * Implemented by
  * Copyright 2022 raja <raja@raja-IdeaPad-Gaming-3-15IMH05>
  * 
  * This program is free software; you can redistribute it and/or modify
@@ -38,7 +39,7 @@
  */ 
 
 FirmwareStatus::FirmwareStatus(WebSocketsClient *webSocket) : webSocket(webSocket){
-statusMessage = "NotImplemented"; //default value if anything goes wrong
+statusMessage = firmwarestatus_str[NotImplemented]; //default value if anything goes wrong
 }
 
 /*
@@ -50,7 +51,8 @@ const char* FirmwareStatus::getOcppOperationType(){
 }
 
 /*
- * @breif: Method - createReq => This method creates Fota request to be sent to the OCPP server
+ * @breif: 
+ * Method - createReq => This method creates Fota request to be sent to the OCPP server
  * Field Name   | Field Type         | Card. | Description
  * status       | FirmwareStatus enum| 1..1  | Required. This contains the progress status of the firmware installation.
  */ 
