@@ -88,7 +88,8 @@ short int flag_otatrails;
 void ota_Loop(){
 
 	if(millis() - startTimer > 43200000){
-
+        // Add wifi connect/ ethernet connect. Both wifi and ethernet use the same API's
+        // if(wifi_connect == true){ 
 		if((getChargePointStatusService()->inferenceStatus() == ChargePointStatus::Available  || getChargePointStatusService()->inferenceStatus() == ChargePointStatus::Faulted) && wifi_connect == true){
 			requestLed(BLUE,START,1); 
 			setupOTA();
@@ -97,6 +98,16 @@ void ota_Loop(){
                 Serial.println("Restarting ESP32");
                 ESP.restart();
             }
-		} 
+		}
+        //Add 4G/GSM connect 
+        //else if(gsm_connect == true)
+        /*
+        if(wifi_connect == true){
+//#if WIFI_ENABLED || ETHERNET_ENABLED
+   success = webSocket->sendTXT(out);
+   Serial.println("[WIFI: ]SendConf" +String(out)+String(success));
+//#endif
+ }else if(gsm_connect == true){
+        */
 	}
 }

@@ -35,6 +35,10 @@
 #include "TimeHelper.h"
 
 /*
+* @brief: Refer ChargePointStatus
+*/
+
+/*
  * @breif: Instantiate an object FirmwareStatus
  */ 
 

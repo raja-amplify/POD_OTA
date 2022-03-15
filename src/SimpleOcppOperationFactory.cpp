@@ -87,7 +87,7 @@ void setOnResetSendConfListener(OnSendConfListener listener){
 
 
 /*
-* @breif: Function pointer for FOTA and firmware status
+* @breif: Function pointer for FOTA and firmware status - dummy! No need to do anything.
 */
 
 OnReceiveReqListener onFotaNotificationReceiveRequest;
@@ -189,12 +189,12 @@ OcppOperation *makeOcppOperation(WebSocketsClient *ws, const char *messageType) 
   //Added by Raja 
  /* else if (!strcmp(messageType, "FirmwareStatus")) { 
     msg = new FirmwareStatus(ws);
-   // operation->setOnReceiveReqListener(FirmwareStatus); // not required.
+   // operation->setOnReceiveReqListener(FirmwareStatus); // not required - dummy!
   }*/
   //Added by Raja 
   else if (!strcmp(messageType, "FotaNotification")) { 
     msg = new FotaNotification();
-   // operation->setOnReceiveReqListener(FotaNotification); // not required.
+   // operation->setOnReceiveReqListener(FotaNotification); // not required - dummy!
   }
   else if (!strcmp(messageType, "RemoteStartTransaction")) {
     msg = new RemoteStartTransaction();
